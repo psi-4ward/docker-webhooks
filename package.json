@@ -1,6 +1,6 @@
 {
   "name": "docker-webhooks",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Run docker exec triggered throug git webhooks",
   "keywords": [
     "docker",

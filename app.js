@@ -46,3 +46,12 @@ tokens.loadTokens(function() {
   server.listen(port);
   console.log("Server is listening on port", port);
 });
+
+
+// shutdown
+process.on('SIGTERM', function() {
+  process.exit(0);
+});
+process.on('SIGINT', function() {
+  process.exit(0);
+});
