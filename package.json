@@ -1,0 +1,33 @@
+{
+  "name": "docker-webhooks",
+  "version": "0.0.3",
+  "description": "Run docker exec triggered throug git webhooks",
+  "keywords": [
+    "docker",
+    "github",
+    "gitlab",
+    "webhook",
+    "update"
+  ],
+  "main": "app.js",
+  "dependencies": {
+    "async": "^0.9.0",
+    "dockerode": "^2.1.2",
+    "js-yaml": "^3.3.0",
+    "lodash": "^3.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/psi-4ward/docker-webhooks"
+  },
+  "author": "Christoph Wiechert <wio@psitrax.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/psi-4ward/docker-webhooks/issues"
+  },
+  "homepage": "https://github.com/psi-4ward/docker-webhooks"
+}

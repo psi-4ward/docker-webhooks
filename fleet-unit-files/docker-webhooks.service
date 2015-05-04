@@ -1,0 +1,29 @@
+[Unit]
+Description=docker-webhooks
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+RestartSec=5s
+TimeoutStartSec=120
+TimeoutStopSec=25
+
+EnvironmentFile=/etc/environment
+
+# remove old container
+ExecStartPre=/bin/sh -c "docker ps -a | grep %p 1>/dev/null && docker rm %p || true"
+ExecStartPre=docker pull psitrax/docker-webhooks
+
+# Start the container
+ExecStart=/usr/bin/docker run \
+    --rm \
+    --name=%p \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v /DATA/docker-webhooks:/root/node_modules/docker-webhooks/tokens \
+    psitrax/docker-webhooks
+
+ExecStop=/usr/bin/docker stop %p
+
+[X-Fleet]
+MachineMetadata=node=node02
