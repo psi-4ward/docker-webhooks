@@ -13,7 +13,7 @@ EnvironmentFile=/etc/environment
 
 # remove old container
 ExecStartPre=/bin/sh -c "docker ps -a | grep %p 1>/dev/null && docker rm %p || true"
-ExecStartPre=docker pull psitrax/docker-webhooks
+ExecStartPre=/usr/bin/docker pull psitrax/docker-webhooks
 
 # Start the container
 ExecStart=/usr/bin/docker run \
